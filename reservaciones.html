@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/funcionesReservaciones.js"></script>  
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        
+        <nav class="bg-purple-800">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                  </div>
+                  <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                      <!-- Current: "bg-purple-900 text-white", Default: "text-purple-300 hover:bg-purple-700 hover:text-white" -->
+                      <a href="index.html" class="text-purple-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+
+                      <a href="categoria.html" class="bg-purple-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Categoria</a>
+        
+                      <a href="machine.html" class="text-purple-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Maquinas</a>
+        
+                      <a href="cliente.html" class="text-purple-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
+        
+                      <a href="mensajes.html" class="text-purple-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mensajes</a>
+                
+                      <a href="reportes.html" class="text-purple-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reportes</a>
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+        
+          
+              </div>
+            </div>
+          </nav>
+
+          <div>
+            <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Elije la fecha de inicio de la reserva: </label>
+                  <input type="date" id="startDate" placeholder="fecha de inicio" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Elije la fecha de devolución:</label>
+                  <input type="date" id="devolutionDate" placeholder="password"class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                  <label for="status" class="leading-7 text-sm text-gray-600">Elije el status de la reserva</label>
+                  <div class="mb-3 xl:w-96">
+                        <select id="status" class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-purple-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-purple-300 rounded transition ease-in-out m-0 focus:text-purple-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <option value="completed">Completada</option>
+                            <option value="cancelled">Cancelada</option>
+                        </select><br>
+                  <label for="name" class="leading-7 text-sm text-gray-600">Elije el cliente: </label>
+                  <div class="mb-3 xl:w-96">
+                    <select id="select-client" class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-purple-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-purple-300 rounded transition ease-in-out m-0 focus:text-purple-700 focus:bg-white focus:border-blue-600 focus:outline-none">    
+                    </select><br></div>
+                  <label for="machine" class="leading-7 text-sm text-gray-600">Elije la maquina a reservar: </label>
+                  <div class="mb-3 xl:w-96">
+                    <select id="select-machine" class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-purple-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-purple-300 rounded transition ease-in-out m-0 focus:text-purple-700 focus:bg-white focus:border-blue-600 focus:outline-none">    
+                    </select><br></div>
+                </div>
+            </div>
+        </div>
+        </div>
+   
+      
+
+          <script type="text/javascript">
+            window.onload = getMachine_Reservaciones();
+        </script>
+        
+        <script type="text/javascript">
+            window.onload = getClient_Reservaciones();
+        </script><br>
+
+        <script type="text/javascript">
+            window.onload = getReservaciones();
+        </script>
+        
+        <div id="resultado4"></div>
+        
+<div class="p-2 w-full">
+    <button onclick="postReservaciones()" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Crear Reservacion</button>
+</div>
+
+       
+
+    </body>
+</html>
